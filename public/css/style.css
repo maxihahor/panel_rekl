@@ -1,0 +1,215 @@
+.box
+{
+    background: rgba(255,255,255,0.7);
+    height: 100%;
+    width: 100%;
+}
+
+.black-box
+{
+    background: rgba(0,0,0,0.2);
+    height: 100%;
+    width: 100%;
+}
+
+.navbar-ot
+{
+    background-color: #064c96;
+    color: #fff;
+    width: 100%;
+}
+
+.carousel-inner > .item
+{
+    height: 100%;
+    background-size: cover;
+}
+
+
+
+
+/* search bar */
+
+#imaginary_container{
+    margin-top: 5%; /* Don't copy this */
+}
+.stylish-input-group .input-group-addon{
+    background: white;
+}
+.stylish-input-group .form-control{
+    border-right:0;
+    box-shadow:0 0 0;
+    border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
+
+.logo {
+            margin: auto;
+            display: block;
+        }
+        .heading {
+            margin: 20px 0 20px 0;
+        }
+        .panel-primary {
+            border-radius: 0;
+            box-shadow: 10px 10px 10px #888;
+        }
+        .rekl-no {
+            background-color: #064c96;
+            color: #fff;
+            padding: 10px;
+            box-shadow: 5px 5px 5px #888;
+        }
+
+        .rekl {
+            background-color: #064c96;
+            color: #fff;
+            padding: 20px;
+            box-shadow: 5px 5px 5px #888;
+        }
+
+        .title {
+            color: #064c96;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .row-top {
+            margin-top: 10px;
+            height: auto;
+        }
+        .info {
+            min-height: 30%;
+        }
+		.footer {
+            background-color: #064c96;
+            color: #fff;
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 1rem;
+            text-align: right;
+		}
+
+		.no_ref {
+			text-decoration: none;
+		}
+
+		.no_ref:hover {
+			text-decoration: none;
+		}
+
+		.white {
+			color: white;
+		}
+
+    .btn-width100 {
+      width: 100%;
+    }
+
+		.white:hover {
+			color: gray;
+		}
+
+    .navbar-op {
+      color: #fff;
+      background-color: #064c96;
+      border: none;
+    }
+.label-align
+{
+    text-align: right;
+}
+
+.control-label
+{
+    padding-right: 25px;
+}
+@media (max-width: 768px)
+{
+    .label-align
+    {
+        text-align: left;
+    }
+    .xs-btn
+    {
+        margin-left: 15px;
+    }
+}
+
+#rekl_search h1
+{
+    font-size: 25px;
+    text-align: center;
+}
+
+.search_form
+{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+#rekl_search label
+{
+    font-weight: normal;
+    margin-top: 6px;
+}
+
+.contact
+{
+    text-align: center;
+}
+
+body
+{
+    font-family: "Arial";
+}
+
+.space
+{
+    margin-top: 5%;
+}
+
+.company
+{
+    font-weight: bold;
+    color: #064c96;
+}
+
+.navbar-op
+{
+    background-color: #064c96;
+    color: white;
+}
+
+.navbar-op .navbar-brand
+{
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a
+{
+    color: white;
+}
+
+.navbar-default .navbar-nav > li > a:hover
+{
+    color: #adadad;
+}
+
+.navbar-op .navbar-brand:hover
+{
+    color: #ffffff;
+}
+
+.navbar-default .navbar-toggle .icon-bar
+{
+    background-color: white;
+}
+
+.navbar-default .navbar-toggle:hover {
+    background-color: #2b669a;
+}

@@ -13,7 +13,15 @@
 
 Route::get('/', function()
 {
-	return View::make('panel logowania');
+	return View::make('main');
 });
 
-Route::get
+Route::get('/panel', function()
+{
+	return View::make('panel');
+});
+
+Route::get('/kontakt', function()
+{
+	return View::make('kontakt');
+});
