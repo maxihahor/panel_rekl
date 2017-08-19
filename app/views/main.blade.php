@@ -6,6 +6,7 @@
 
 @section('custom_style')
 
+
 @endsection
 
 @section('content')
@@ -22,21 +23,17 @@
                     <div class="login_form">
                         <h3><b>Logowanie</b></h3>
                         <hr>
-                        <form class="login-form sm-menu">
+                        {{Form::open(array('class' => 'login-form'))}}
                             <div class="form-group">
-                                <input class="form-control" id="nip" type="text" placeholder="NIP">
+                                {{Form::text('nip', null, ['class' => 'form-control', 'placeholder' => 'NIP'])}}
                             </div>
                             <div class="form-group">
-                                <input class="form-control" id="nip" type="password" placeholder="Hasło">
+                                {{Form::password('password', ['class' => 'form-control', 'placeholder' => 'Hasło'])}}
                             </div>
-                            <div class="form-group">
-                                <button type="submit" class="btn btn-primary">Zaloguj</button>
-                            </div>
-                        </form>
+                            {{Form::submit("Zaloguj", ['class' => 'btn btn-primary'])}}
+                        {{Form::close()}}
                     </div>
                 </div>
-
-
             </div>
         </div>
     </div>

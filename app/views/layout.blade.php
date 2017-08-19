@@ -164,6 +164,12 @@
             height: 100%;
             padding: 20px;
             text-align: center;
+            overflow-y: hidden;
+        }
+
+        .log-in
+        {
+            text-align: center;
         }
         @yield('custom_style')
     </style>
@@ -179,11 +185,9 @@
                         <img src="{{URL::asset('img/group-truck.png')}}">
                     </div>
                 </div>
-                <div class="col-md-5 hidden-sm hidden-xs">
-                    <div class="row">
-                        <div class="col-md-offset-11 col-md-1">
-                            <a href="{{url('/kontakt')}}">Kontakt</a>
-                        </div>
+                <div class="col-md-offset-3 col-md-2 hidden-sm hidden-xs">
+                    <div class="row log-in">
+                            <span class="glyphicon glyphicon-log-in"></span> Zaloguj
                     </div>
                 </div>
             </div>

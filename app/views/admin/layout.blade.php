@@ -9,14 +9,14 @@
         <link rel="stylesheet" href="{{URL::asset('css/bootstrap.css')}}">
         <link rel="stylesheet" href="{{URL::asset('css/style.css')}}">
         <script src="{{URL::asset('js/jquery.min.js')}}"></script>
+        <script src="{{URL::asset('js/jquery.mask.js')}}"></script>
         <link rel="icon" href="{{URL::asset('img/logo1.png')}}">
 
         <script src="{{URL::asset('js/bootstrap.js')}}"></script>
         <title>
-            Opoltrans - obsługa reklamacji
+            Panel administracyjny
         </title>
     </head>
-
     <style>
         .vertical-center
         {
@@ -112,7 +112,8 @@
                 margin: auto;
             }
         }
-        @media (max-width: 991px) {
+        @media (max-width: 767px)
+        {
             .login-form
             {
                 max-width: 80%;
@@ -120,15 +121,11 @@
             }
         }
 
-        .footer
-        {
-            opacity: 0.7;
-        }
         .sm-menu
         {
             vertical-align: middle;
         }
-        @media (min-width: 992px) {
+        @media (min-width: 768px) {
             .vertical {
                 top: 40%;
                 margin: auto;
@@ -143,15 +140,21 @@
             height: 70%;
             padding: 7%;
         }
-
-        .panel-left
+        @media(min-width: 992px)
         {
+            .panel-left {
+                background: url("{{URL::asset('img/panel-left-bg.png')}}") bottom center no-repeat;
+            }
+        }
+        .panel-left {
             color: #fff;
-            background: url("{{URL::asset('img/panel-left-bg.png')}}") bottom center no-repeat;
+            background-color: #064c96;
             background-size: cover;
             height: 70%;
             padding: 30px;
         }
+
+
 
         .login_form
         {
@@ -161,11 +164,17 @@
             height: 100%;
             padding: 20px;
             text-align: center;
+            overflow-y: hidden;
         }
+
+        .log-in
+        {
+            text-align: center;
+        }
+        @yield('custom-style')
     </style>
 
     <body>
-
         <header class="container header-page">
             <div class="row">
                 <div class="col-md-7">
@@ -176,46 +185,43 @@
                         <img src="{{URL::asset('img/group-truck.png')}}">
                     </div>
                 </div>
-                <div class="col-md-5 hidden-sm hidden-xs">
-                    <div class="row">
-                        <div class="col-md-offset-11 col-md-1">
-                            <a href="#">Kontakt</a>
-                        </div>
+                <div class="col-md-offset-2 col-md-3 hidden-sm hidden-xs">
+                    <div class="row log-in">
+                        @if(Auth::check())
+                            <div class="col-sm-6">
+                                <span class="glyphicon glyphicon-user"></span> {{Auth::user()->nip}}
+                            </div>
+                            <div class="col-sm-6">
+                                <span class="glyphicon glyphicon-log-in"></span>{{link_to('/logout', ' Wyloguj')}}
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>
         </header>
-        <div class="panel_main">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-6 panel-left hidden-xs">
-                        <h2>Sprawdzenie statusu zgłoszenia reklamacyjnego</h2>
-                        <hr>
-                        <div class="col-md-8 col-sm-6">
-                            Wprowadź login oraz hasło do panelu reklamacyjnego w pola znajdujące się po prawej.<br>
-                            W przypadku problemów z logowaniem bądź pytań prosimy o <a href="#">kontakt</a>.
 
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-6 panel-right">
-                        <div class="login_form">
-                            <h3><b>Logowanie</b></h3>
-                            <hr>
-                            <form class="login-form sm-menu">
-                                <div class="form-group">
-                                    <input class="form-control" id="nip" type="text" placeholder="NIP">
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" id="nip" type="password" placeholder="Hasło">
-                                </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">Zaloguj</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
+
+        <div class="container">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    @yield('panel-title')
+                </div>
+                <div class="panel-body">
+                    @yield('panel-body')
+                </div>
+                <div class="panel-footer">
+                    @yield('panel-footer')
                 </div>
             </div>
         </div>
+
+
+
+        <div class="footer hidden-sm hidden-xs hidden-md">
+            &copy Opoltrans 2017 Wszelkie prawa zastrzeżone
+        </div>
+
     </body>
+
+    @yield('script')
 </html>

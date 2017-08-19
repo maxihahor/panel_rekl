@@ -1,14 +1,10 @@
-@extends("layout")
+@extends('panel-layout')
 
 @section('title')
     Panel reklamacyjny
     @endsection
 
 @section('custom_style')
-    .navbar-default
-    {
-        background-color: #064c96;
-    }
 
     .panel-short-right
     {
@@ -23,52 +19,32 @@
         height: 67%;
         padding: 0px;
     }
-
-    .dropdown-menu li a
+    .carousel-caption
     {
-        color: white;
+        background: rgba(255,255,255,0);
+        background: -moz-linear-gradient(top, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.8) 60%, rgba(255,255,255,0) 100%);
+        background: -webkit-gradient(left top, left bottom, color-stop(30%, rgba(0,0,0,0.8)), color-stop(60%, rgba(0,0,0,0.8)), color-stop(100%, rgba(255,255,255,0)));
+        background: -webkit-linear-gradient(top, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.8) 60%, rgba(255,255,255,0) 100%);
+        background: -o-linear-gradient(top, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.8) 60%, rgba(255,255,255,0) 100%);
+        background: -ms-linear-gradient(top, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.8) 60%, rgba(255,255,255,0) 100%);
+        background: linear-gradient(to bottom, rgba(0,0,0,0.8) 30%, rgba(0,0,0,0.8) 60%, rgba(255,255,255,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
+
+        width: 100%;
+        position: relative;
+        left: 0px;
+        top: 0%;
     }
 
-    .dropdown-menu li a:hover
+    h1
     {
-        color: #064c96;
-        background-color: white;
+        text-shadow: 2px 2px 10px #000000;
     }
 
     @endsection
 
-@section('content')
+@section('panel-content')
 
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="navbar-collapse collapse" id="navbar">
-                <div class="navbar-header">
-
-                </div>
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background-color: #064c9f; color: white; ">
-                            Reklamacje <span class="caret"></span>
-                        </a>
-
-                        <ul class="dropdown-menu" style="background-color: #054187; color: white; border: 1px solid white;">
-                            <li><a href="#">W toku</a></li>
-                            <li><a href="#">Zakończone</a></li>
-                            <li><a href="#">Odrzucone</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Wszystkie reklamacje</a></li>
-                    <li><a href="#">Wyloguj się</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
 
     <div class="hidden-sm hidden-xs col-lg-6 col-md-6 panel-short-left">
         <div id="slider" class="carousel slide" data-ride="carousel">
@@ -77,34 +53,51 @@
                 <li data-target="#slider" data-slide-to="1"></li>
                 <li data-target="#slider" data-slide-to="2"></li>
                 <li data-target="#slider" data-slide-to="3"></li>
+                <li data-target="#slider" data-slide-to="4"></li>
             </ol>
             <div class="carousel-inner">
-                <div class="item active">
-                    <img src="{{URL::asset('img/slider/1.jpg')}}" alt="Opoltrans">
+                <div class="item active" style="background: url('{{URL::asset('img/slider/1.jpg')}}'); background-size: cover;">
+                    <div class="carousel-caption">
+                        <h1>PRZYGOTOWANI DO KAŻDEGO SEZONU</h1>
+                    </div>
                 </div>
-                <div class="item">
-                    <img src="{{URL::asset('img/slider/2.jpg')}}" alt="Opoltrans">
+                <div class="item" style="background: url('{{URL::asset('img/slider/2.jpg')}}'); background-size: cover;">
+                    <div class="carousel-caption">
+                        <h1>OPONY DO POJAZDÓW OSOBOWYCH ORAZ UŻYTKOWYCH</h1>
+                    </div>
                 </div>
-                <div class="item">
-                    <img src="{{URL::asset('img/slider/1.jpg')}}" alt="Opoltrans">
+                <div class="item" style="background: url('{{URL::asset('img/slider/3.jpg')}}'); background-size: cover;">
+                    <div class="carousel-caption">
+                        <h1>Jakas informacja do wpisania</h1>
+                    </div>
                 </div>
-                <div class="item">
-                    <img src="{{URL::asset('img/slider/2.jpg')}}" alt="Opoltrans">
+                <div class="item" style="background: url('{{URL::asset('img/slider/4.jpg')}}'); background-size: cover;">
+                    <div class="carousel-caption">
+                        <h1>Jakas informacja do wpisania</h1>
+                    </div>
                 </div>
+                <div class="item" style="background: url('{{URL::asset('img/slider/5.jpg')}}'); background-size: cover;">
+                    <div class="carousel-caption">
+                        <h1>JESTEŚMY CZEŚCIĄ MOTORYZACJI</h1>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
     <div class="col-lg-6 col-md-6 panel-short-right">
-            <p>Tutaj wyświetlane będą informacje o Twoich reklamacjach.</p>
-            <p>Z poziomu panelu możliwy jest podgląd ich statusów, pobranie dokumentów jak i sprawdzenie archiwalnych zgłoszeń.</p>
-            <p>Skorzystaj z wyszukiwarki znajdującej się poniżej, aby znaleźć zgłoszenie po jego numerze, bądź wybierz menu Reklamacje, a następnie odpowiednią kategorię.</p>
+            <div style="font-weight: bold;">
+                <p>Tutaj wyświetlane będą informacje o Twoich reklamacjach.</p>
+                <p>Z poziomu panelu możliwy jest podgląd ich statusów, pobranie dokumentów jak i sprawdzenie archiwalnych zgłoszeń.</p>
+                <p>Skorzystaj z wyszukiwarki znajdującej się poniżej, aby znaleźć zgłoszenie po jego numerze, bądź wybierz menu Reklamacje, a następnie odpowiednią kategorię.</p>
 
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-sm-offset-3">
                         <div id="imaginary_container">
                             <div class="input-group stylish-input-group">
-                                <input type="text" class="form-control"  placeholder="Wyszukaj reklamację" >
+                                <input type="text" class="form-control"  placeholder="Wyszukaj reklamację">
                                 <span class="input-group-addon">
                                     <button type="submit">
                                         <span class="glyphicon glyphicon-search"></span>
@@ -119,11 +112,5 @@
     @endsection
 
 @section('script')
-    <script type="text/javascript">
-        $(document).ready(function() {
-            $('.carousel').carousel({
-                interval: 10000
-            })
-        });
-    </script>
+
 @endsection
